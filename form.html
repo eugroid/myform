@@ -18,14 +18,7 @@
         document.getElementById('form').addEventListener('submit', function(event) {
             event.preventDefault();
             const name = document.getElementById('name').value;
-
-            // Отправка данных в бот через Telegram Web App
             Telegram.WebApp.sendData(JSON.stringify({name: name}));
-        });
-
-        // Ожидание события на полученные данные
-        Telegram.WebApp.onEvent('dataSend', function(data) {
-            alert('Данные отправлены в бота: ' + data);
         });
     </script>
 </body>
